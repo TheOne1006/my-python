@@ -6,15 +6,7 @@ python  学习-进阶之路
 ### lesson
 
 1. [字符画](/lesson-1-ascii-pic)
-
-
-
-
-
-
-
-
-
+2. [终端版2048](/lesson-2-curses-2048)
 
 
 
@@ -31,6 +23,24 @@ python  学习-进阶之路
 关联项目: 
 
 1. [字符画](/lesson-1-ascii-pic)
+
+##### curses 用来在终端上显示图形界面
+
+关联项目: 
+
+1. [2048](/lesson-2-curses-2048)
+
+##### random 模块用来生成随机数
+
+关联项目: 
+
+1. [2048](/lesson-2-curses-2048)
+
+##### collections collections 提供了一个字典的子类 defaultdict。可以指定 key 值不存在时，value 的默认值。
+
+关联项目: 
+
+1. [2048](/lesson-2-curses-2048)
 
 
 
