@@ -15,6 +15,7 @@ python  学习-进阶之路
 
 1. [字符画](/lesson-1-ascii-pic)
 2. [终端版2048](/lesson-2-curses-2048)
+3. [识别简单验证码](/lesson-3-python-captcha)
 
 
 
@@ -22,9 +23,12 @@ python  学习-进阶之路
 
 ##### pillow 图像处理库
 
+<https://pillow-cn.readthedocs.io/zh_CN/latest/>
+
 关联项目: 
 
 1. [字符画](/lesson-1-ascii-pic)
+2. [识别简单验证码](/lesson-3-python-captcha)
 
 ##### argparse 标准库中推荐使用的命令行解析模块
 
