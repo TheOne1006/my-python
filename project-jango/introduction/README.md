@@ -38,6 +38,11 @@ django-admin startproject introduction
 #└── manage.py 管理文件
 ```
 
+可能还需要   
+`apps.py` 应用  
+`models.py` 视图处理  
+`admin.py` 定义管理模型
+
 启动项目
 ```shell
 cd introduction

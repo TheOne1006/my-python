@@ -2,6 +2,9 @@
 
 ## KNOWLEDGE
 
+- 应用 与 项目的差异
+    - 一个项目可以包含多个应用
+- 目录
 - WSGI（Web Server Gateway Interface）
 - ASGI（Async Web Server Gateway Interface）
 - shell

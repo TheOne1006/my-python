@@ -130,3 +130,5 @@ dmypy.json
 
 _python_captcha
 _python_captcha.zip
+
+*.sqlite3
