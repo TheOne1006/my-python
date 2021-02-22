@@ -1,6 +1,14 @@
 # my-python
 python  学习-进阶之路
 
+### environment
+
+1. conda
+2. ide
+
+## project
+
+1. [djiango](/project-jango)
 
 
 ### lesson
