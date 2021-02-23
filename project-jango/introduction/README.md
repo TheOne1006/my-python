@@ -51,6 +51,28 @@ python manage.py runserver
 ```
 
 
+### 新增一个应用
+
+```shell
+# 建立 blog app
+python manage.py startapp blog
+
+# 产生目录
+blog 
+├── __init__.py
+├── admin.py # 管理 模块
+├── apps.py  # 声明应用
+├── migrations #
+│   └── __init__.py
+├── models.py 
+├── tests.py
+├── urls.py
+└── views.py
+```
+
+
+
+
 
 ## MVC
 
