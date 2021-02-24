@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # self app
+    'blog.apps.BlogConfig'
 ]
 
 MIDDLEWARE = [
@@ -75,6 +78,7 @@ WSGI_APPLICATION = 'introduction.wsgi.application'
 
 DATABASES = {
     'default': {
+        # 引擎
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
