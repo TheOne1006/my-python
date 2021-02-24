@@ -120,3 +120,35 @@ blog
     - 生成 `blog/migrations/0001_initial.py`
 3. 执行迁移文件
     - 执行 `python manage.py migrate`
+    
+
+### shell
+
+1. 启动 dango shell
+   - `python manage.py shell`
+2. 执行 命令
+
+```shell
+from blog.models import Article
+a = Article()
+a.title = 'test shell'
+a.content = 'content '
+#保存
+a.save()
+
+# 查询所有文章,校验 是否写入成功
+articles = Article.objects.all()
+
+article = articles[0]
+print(article.title)
+
+# 退出
+exit()
+```
+
+
+### Admin 模块
+
+- 后台管理工具
+- 定义模型元数据
+

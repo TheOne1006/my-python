@@ -8,6 +8,9 @@
 - WSGI（Web Server Gateway Interface）
 - ASGI（Async Web Server Gateway Interface）
 - shell
+  - 交互式的 python 编程
+  - 临时性操作更方便
+  - 小范围 debug
 
 
 ### ENV
