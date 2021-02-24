@@ -75,21 +75,7 @@ blog
 
 ## MVC
 
-
-### 视图
-
-- 模板 + 变量
-
-### 模型层
-- 模型层是什么？
-    - 位于视图和数据之间
-    - python 对象和数据库表之间的转换
-- 模型层的作用
-    - 屏蔽不同数据库的差异
-    - 让开发者更专注于逻辑开发 
-    - 提供更多便捷工具
-  
-## setup
+#### setup 
 
 1. 创建 `blog/views.py` 完成 `helloWorld`函数
 2. 配置路由，项目层次 与 应用层次 
@@ -99,3 +85,38 @@ blog
     - INSTALLED_APPS
     - 添加 `blog.apps.BlogConfig`
 4. 访问 `http://127.0.0.1:8000/blog/hello_world`
+
+
+### 视图
+
+- 模板 + 变量
+
+### 模型层
+
+- 模型层是什么？
+    - 位于视图和数据之间
+    - python 对象和数据库表之间的转换
+- 模型层的作用
+    - 屏蔽不同数据库的差异
+    - 让开发者更专注于逻辑开发 
+    - 提供更多便捷工具
+- 配置
+    - `introduction/settings.py`
+    - DATABASES
+    
+#### 创建文章模型
+
+> 字段定义
+
+- AutoField
+- primary_key 属性
+
+  
+#### setup 
+
+1. 在`blog/models.py`  中定义模型
+2. 创建迁移 文件
+    - 执行 `python manage.py makemigrations` 
+    - 生成 `blog/migrations/0001_initial.py`
+3. 执行迁移文件
+    - 执行 `python manage.py migrate`
