@@ -17,3 +17,10 @@ def article_content(request):
     article_id = article.article_Id
     s = 'title: %s, content: %s, article_id: %s' % (title, content, article_id)
     return HttpResponse(s)
+
+
+def get_index_page(request):
+    articles = Article.objects.all()
+    return render(request, 'index.html', {
+        'article_list': articles,
+    })
