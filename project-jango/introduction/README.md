@@ -152,3 +152,19 @@ exit()
 - 后台管理工具
 - 定义模型元数据
 
+
+#### setup 
+
+1. 创建超级管理员
+    - `python manage.py createsuperuser`
+2. 启动应用,访问管理界面
+    - `http://127.0.0.1:8000/admin/`
+3. 将 article 模型注册到 Admin 中
+    - 编辑 `blog/admin.py`
+    - 可在后台看见
+4. 定义后台管理
+
+### 页面渲染 
+
+1. 编辑 `blog/views.py`
+2. 配置 路由
