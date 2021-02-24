@@ -73,7 +73,6 @@ blog
 
 
 
-
 ## MVC
 
 
@@ -89,3 +88,14 @@ blog
     - 屏蔽不同数据库的差异
     - 让开发者更专注于逻辑开发 
     - 提供更多便捷工具
+  
+## setup
+
+1. 创建 `blog/views.py` 完成 `helloWorld`函数
+2. 配置路由，项目层次 与 应用层次 
+    - 应用层次 `blog/urls.py`
+    - 项目层次 `introduction/urls.py`
+3. 应用添加到项目中 `introduction/settings`
+    - INSTALLED_APPS
+    - 添加 `blog.apps.BlogConfig`
+4. 访问 `http://127.0.0.1:8000/blog/hello_world`
