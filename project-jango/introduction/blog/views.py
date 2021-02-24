@@ -24,3 +24,10 @@ def get_index_page(request):
     return render(request, 'index.html', {
         'article_list': articles,
     })
+
+def get_detail_page(request, id):
+    articles = Article.objects.all()
+
+    return render(request, 'detail.html', {
+        'article': articles[id - 1],
+    })
