@@ -55,7 +55,12 @@ python  学习-进阶之路
 1. [2048](/lesson-2-curses-2048)
 
 
-##### xlrd 处理 Excel
+##### xlrd/xlwt 处理 Excel
 
+1. [xlrd](/libs/xlrd) excel 读取
+    - 高版本支持`xlsx` 
+    - 可使用旧版 `1.2.0`
+2. [xlwt](/libs/xlwt) excel 写入
+    - 
 
-
+#### pptx/docx ppt/word文档 处理
