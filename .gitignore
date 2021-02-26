@@ -133,4 +133,4 @@ _python_captcha.zip
 
 *.sqlite3
 
-*.config.ini
+config.ini
