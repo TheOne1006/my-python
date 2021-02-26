@@ -11,7 +11,8 @@ appSetting = {
     'loginPage': '.mine.MinePageActivity',
     'searchPage': 'com.wudaokou.hippo.search.SearchActivity',
     'loginForm': 'com.ali.user.mobile.login.ui.UserLoginActivity',
-    'userPage': '.mine.MinePageActivity'
+    'userPage': '.mine.MinePageActivity',
+    'activePage': 'com.wudaokou.hippo.flutter.HMFlutterActivity'
 }
 
 config = configparser.ConfigParser()
@@ -74,6 +75,19 @@ def homeAccount():
     driver.find_element_by_xpath("//*[@text='我的']").click()
     driver.wait_activity(appSetting['userPage'], 15, 2)
     driver.find_element_by_xpath("//*[@text='盒马小镇']").click()
+    driver.wait_activity(appSetting['activePage'], 15, 2)
+    sleep(1)
+    driver.find_elements_by_class_name('android.widget.Button')[0].click()
+    sleep(1)
+
+
+
+
+def tapflower():
+    sleep(2)
+    driver.tap(98, 652)
+    driver.tap(244, 652)
+    driver.tap(412, 666)
 
 
 is_login = accountIsLogin()
@@ -86,5 +100,6 @@ if not is_login:
 else:
     print('无需登录')
     homeAccount()
+    # tapflower()
 
 sleep(1)
