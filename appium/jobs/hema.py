@@ -3,6 +3,7 @@ import os
 import sys
 
 from appium import webdriver
+from appium.webdriver.common.touch_action import TouchAction
 from time import sleep
 
 appSetting = {
@@ -33,8 +34,8 @@ desired_caps = dict(
     appActivity=appSetting['indexPage'],
     awaitActivity=appSetting['indexPage'],
     noReset=True,
-    # unicodeKeyboard=True,
-    # resetKeyboard=True
+    unicodeKeyboard=True,
+    resetKeyboard=True
 )
 
 driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
@@ -48,10 +49,13 @@ if not installed:
 
 def accountIsLogin():
     driver.find_element_by_xpath("//*[@text='我的']").click()
-    sleep(3)
-    ua = driver.current_activity
 
-    return ua == appSetting['loginPage']
+    driver.wait_activity(appSetting['userPage'], 15, 2)
+
+    ua = driver.current_activity
+    sleep(3)
+
+    return ua == appSetting['userPage']
 
 def loginAccount():
     driver.find_element_by_xpath("//*[@text='我的']").click()
@@ -71,35 +75,67 @@ def loginAccount():
     driver.find_element_by_accessibility_id("登录").click()
 
 
-def homeAccount():
-    driver.find_element_by_xpath("//*[@text='我的']").click()
-    driver.wait_activity(appSetting['userPage'], 15, 2)
+def goToMyTown():
     driver.find_element_by_xpath("//*[@text='盒马小镇']").click()
-    driver.wait_activity(appSetting['activePage'], 15, 2)
+    driver.wait_activity('.category.WebNavigationActivity', 15, 2)
+    sleep(5)
+
+def tapMyflower():
+    driver.wait_activity('.category.WebNavigationActivity', 10, 2)
+    # ele = driver.find_element_by_xpath("//*[@text='任意消费']")
+    # print('ele')
+    # print(ele.touch())
+    # sleep(3)
+    # print('pre tap')
+    # ele2 = driver.find_element_by_xpath("//*[@text='每日签到']")
+    # print(ele2)
+    sleep(5)
+    driver.tap([(214,  596)], 300)
+    sleep(3)
+
+def goToOhterTown():
+    sleep(3)
+    try:
+        driver.find_element_by_xpath("//*[@text='返回我的盒马小镇']")
+        sleep(1)
+        driver.tap([(617, 1003)], 300)
+    except:
+        driver.tap([(590, 788)], 500)
     sleep(1)
-    driver.find_elements_by_class_name('android.widget.Button')[0].click()
+
+    # print('goto other town')
+    # driver.tap([(590, 788)], 500)
+    # sleep(3)
+
+def tapOtherFlower():
     sleep(1)
-
-
-
-
-def tapflower():
+    driver.tap([(241, 657)], 271)
     sleep(2)
-    driver.tap(98, 652)
-    driver.tap(244, 652)
-    driver.tap(412, 666)
 
 
-is_login = accountIsLogin()
+is_login = True
+    # accountIsLogin()
 
 print(is_login)
 
-if not is_login:
-    print('需要登录')
-    loginAccount()
-else:
-    print('无需登录')
-    homeAccount()
-    # tapflower()
 
-sleep(1)
+try:
+    if not is_login:
+        print('需要登录')
+        loginAccount()
+    else:
+        print('无需登录')
+
+    goToMyTown()
+    # tapMyflower()
+    # goToOhterTown()
+    # tapOtherFlower()
+
+    for i in range(15):
+        goToOhterTown()
+        tapOtherFlower()
+        sleep(2)
+
+except:
+    print('failed')
+
