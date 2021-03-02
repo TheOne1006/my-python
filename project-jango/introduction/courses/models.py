@@ -18,9 +18,9 @@ class AddressInfo(models.Model):
         # ordering = ['pid']  # 指定按照什么字段排序
         verbose_name = '省市县地址信息'
         verbose_name_plural = verbose_name
-        # abstract = True
+        # abstract = True （True 为基类，用于继承)
         # permissions = (('定义好的权限', '权限说明'),)
         # managed = False
-        unique_together = ('address', 'note')  # ((),())
+        unique_together = ('address', 'note')  # ((),()) 联合唯一约束
         # app_label = 'courses'
         # db_tablespace  # 定义数据库表空间的名字

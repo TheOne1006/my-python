@@ -132,4 +132,5 @@ class AddressAPI(View):
         for a in address_data:
             area_list.append({'id': a['id'], 'address': a['address']})
         # 然后通过jsonResponse返回给请求方, 这里是list而不是dict, 所以safe需要传入False.
+        print(area_list)
         return JsonResponse(area_list, content_type='application/json', safe=False)

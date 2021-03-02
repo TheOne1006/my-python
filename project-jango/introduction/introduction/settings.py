@@ -129,3 +129,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# 开发阶段放置静态文件的目录, 不能相同
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static_files'),
+)
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')  # 执行python3 manage.py collectstatic命令后会将项目中的静态文件收集到static目录

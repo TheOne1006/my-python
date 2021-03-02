@@ -21,5 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog/', include('blog.urls')),
     path('address-view', IndexView.as_view(), name='index'),
-    path(r'^address/(\d+)$', AddressAPI.as_view(), name='address'),
+    path('address/<int:address_id>', AddressAPI.as_view(), name='address'),
 ]
