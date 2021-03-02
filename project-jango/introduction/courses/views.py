@@ -6,7 +6,7 @@ from django.db.models import Count, Avg, Max, Min, Sum, F, Q
 from django.shortcuts import render
 from django.views.generic import View
 from django.http import JsonResponse
-from .models import AddressInfo
+from .models import AddressInfo, Teacher
 
 
 class IndexView(View):
@@ -38,7 +38,9 @@ class IndexView(View):
         # `courses_teacher`.`created_at`, `courses_teacher`.`updated_at` FROM `courses_teacher`
         # WHERE `courses_teacher`.`fans` >= 500 ORDER BY `courses_teacher`.`nickname` ASC
         # """
+
         """返回新QuerySet API"""
+
         # 1.all(), filter(), order_by(), exclude(), reverse(), distinct()
         # s1 = Student.objects.all().exclude(nickname='A同学')
         # for s in s1:
@@ -51,6 +53,8 @@ class IndexView(View):
         # s3 = Student.objects.all().extra(select={"name": "nickname"})
         # for s in s3:
         #     print(s.name)
+
+        """.query 获取原生sql 语句"""
         # print(str(Student.objects.all().only('nickname', 'age').query))
 
         # 3.values(), values_list() 获取字典或元组形式的QuerySet
@@ -70,6 +74,7 @@ class IndexView(View):
         # print(p_240.difference(p_260))
 
         # 6.select_related() 一对一、多对一查询优化, prefetch_related() 一对多、多对多查询优化；反向查询
+        """查询优化 关联表"""
         # courses = Course.objects.all().select_related('teacher')
         # for c in courses:
         #     print(f"{c.title}--{c.teacher.nickname}--{c.teacher.fans}")
@@ -83,7 +88,7 @@ class IndexView(View):
         # print(Course.objects.values('teacher').annotate(vol=Sum('volume')))
         # print(Course.objects.values('teacher').annotate(pri=Avg('price')))
 
-        # """不返回Query API"""
+        """不返回Query API"""
         # # 1.获取对象 get(), get_or_create(), first(), last(), latest(), earliest(), in_bulk()
         # print(Course.objects.first())
         # print(Course.objects.last())

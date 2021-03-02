@@ -24,3 +24,14 @@
     - `python orm_data.py`
     - `python manage.py dumpdata > import_data.json` 导出数据 
     - `python manage.py loaddata import_data.json` 导入数据
+
+
+### ORM 操作
+
+```python
+# 加载 Teacher
+from .models import AddressInfo, Teacher
+
+# objects 是 对象模型类的 对象管理器
+Teacher.objects
+```
