@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from courses.views import IndexView, AddressAPI
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog/', include('blog.urls')),
+    path('address-view', IndexView.as_view(), name='index'),
+    path(r'^address/(\d+)$', AddressAPI.as_view(), name='address'),
 ]
