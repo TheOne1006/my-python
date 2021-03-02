@@ -22,19 +22,4 @@ class Migration(migrations.Migration):
                 ('publish_date', models.DateTimeField(auto_now=True)),
             ],
         ),
-        migrations.CreateModel(
-            name='AddressInfo',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('address', models.CharField(blank=True, max_length=200, null=True, verbose_name='地址')),
-                ('note', models.CharField(blank=True, max_length=200, null=True, verbose_name='说明')),
-                ('pid', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='blog.addressinfo', verbose_name='自关联')),
-            ],
-            options={
-                'verbose_name': '省市县地址信息',
-                'verbose_name_plural': '省市县地址信息',
-                'db_table': 'address',
-                'unique_together': {('address', 'note')},
-            },
-        ),
     ]
