@@ -2,10 +2,13 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import Article
+from .models import AddressInfo
 
 
 class AddressAdmin(admin.ModelAdmin):
     fields = ['address', 'pid']
 
-admin.site.register(Article)
+admin.site.register(AddressInfo, AddressAdmin)
+
+
+
