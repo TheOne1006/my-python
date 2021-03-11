@@ -9,7 +9,7 @@
     - `BGR`
     - `img[0,0]`
     - `img[0, 0, 0]`
-3. numpy 访问像素
+3. numpy 访问像素 
     - `np_arr.itemset((1,0,2),255)`
     - `np_arr.itemset((1,2),255)`
     - `np_arr.item(1,2)`
