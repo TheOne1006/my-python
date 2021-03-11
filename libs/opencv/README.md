@@ -3,8 +3,10 @@
 图像处理
 
 版本: 4.5.1.48
+python: 3.7
 
 [github 网址](:https://github.com/opencv/opencv)
+[资源图像](http://www.broadview.com.cn/book/5745)
 
 
 # step
