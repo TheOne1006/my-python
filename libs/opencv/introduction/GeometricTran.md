@@ -38,6 +38,11 @@
     - `dst = cv2.remap(src, map1, map2, interpolation [,borderMode [,borderValue]])`
         - dst 和 src 具有相同大小和类型
         - map1 参数有两种可能的值
+            - 表示`(x,y)` 映射
+            - 表示 `CV_16SC2, CV_32FCI, CV_32FC2`
+        - map2 根据 map1 变化
+        - interpolation 插值方式
+        - borderModel 边界模式
 
 
 ## 常量
