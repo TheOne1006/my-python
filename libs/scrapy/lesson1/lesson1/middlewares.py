@@ -2,6 +2,8 @@
 #
 # See documentation in:
 # https://docs.scrapy.org/en/latest/topics/spider-middleware.html
+import base64
+import random
 
 from scrapy import signals
 
@@ -101,3 +103,25 @@ class Lesson1DownloaderMiddleware:
 
     def spider_opened(self, spider):
         spider.logger.info('Spider opened: %s' % spider.name)
+
+
+class my_proxy(object):
+    def process_request(self, request, spider):
+        request.meta['proxy'] = 'http-cla.abuyun.com:9030'
+        proxy_name_pass= b'user:auth'
+        encode_pass_name = base64.b64encode(proxy_name_pass)
+        request.headers['Proxy-Authorization'] = 'Basic '+ encode_pass_name.decode()
+
+# 加入 setting
+class my_useragent(object):
+    def process_request(self, request, spider):
+        user_agent_list = [
+            "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36 OPR/26.0.1656.60",
+            "Opera/8.0 (Windows NT 5.1; U; en)",
+            "Mozilla/5.0 (Windows NT 5.1; U; en; rv:1.8.1) Gecko/20061208 Firefox/2.0.0 Opera 9.50",
+            "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; en) Opera 9.50",
+            # Firefox
+        ]
+
+        agent = random.choice(user_agent_list)
+        request.headers['User_agent'] = agent
