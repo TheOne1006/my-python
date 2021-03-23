@@ -14,7 +14,7 @@ NEWSPIDER_MODULE = 'lesson1.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'lesson1 (+http://www.yourdomain.com)'
+USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.72 Safari/537.36 Edg/89.0.774.45'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -62,6 +62,10 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
+
+"""
+开启后才有 pipeline
+"""
 #ITEM_PIPELINES = {
 #    'lesson1.pipelines.Lesson1Pipeline': 300,
 #}
