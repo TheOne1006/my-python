@@ -1,6 +1,11 @@
 # my-python
 python  学习-进阶之路
 
+
+## todo
+
+1. matplotlib 画图，数据展示
+
 ### environment
 
 1. conda

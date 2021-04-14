@@ -4,6 +4,10 @@ __pycache__/
 *$py.class
 .ipynb_checkpoints
 
+
+lesson-7-park/*
+!lesson-7-park/README.MD
+
 # C extensions
 .DS_Store
 *.so
